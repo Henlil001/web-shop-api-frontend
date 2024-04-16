@@ -1,0 +1,9 @@
+.grid{
+    display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 110vh; /* Definiera grid-rader */
+   
+}
+main{
+    padding: 20px;
+}

@@ -1,0 +1,27 @@
+aside {
+    
+    height: 110vh;
+}
+
+aside ul {
+    list-style-type: none;
+    padding-top: 10%;
+    padding-left: 50px;
+}
+
+aside ul li  {
+    
+    padding-bottom: 10%;
+    font-size: x-large;
+}
+
+aside ul li NavLink {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+aside ul li NavLink:hover {
+    font-weight: bold;
+    
+    
+}

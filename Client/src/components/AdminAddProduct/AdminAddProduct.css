@@ -1,0 +1,41 @@
+ul{
+    list-style-type: none;
+    
+}
+ul li{
+    padding-bottom: 15px;
+}
+.name{
+    width: 450px;
+}
+.rest{
+    width: 250px;
+}
+
+
+ul button{
+    margin-right: 15px;
+    background-color: rgb(50, 49, 49); 
+    border: none;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 7px;
+    
+}
+ul button:hover{
+    background-color: black;
+}
+input{
+    border-radius: 5px;
+}
+textarea{
+    border-radius: 5px;
+    width: 450px;
+    min-height: 150px;
+}
+
+
