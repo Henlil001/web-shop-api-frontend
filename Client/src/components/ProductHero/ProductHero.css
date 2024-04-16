@@ -1,0 +1,5 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dela upp i två kolumner med samma storlek */
+    gap: 10px; /* Mellanrum mellan rutorna */
+  }

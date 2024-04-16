@@ -23,6 +23,7 @@ nav ul {
 
   nav h2{
     font-weight: bold;
+    cursor: pointer;
   }
 
   .custom-btn {

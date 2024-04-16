@@ -24,19 +24,6 @@ export const AddProduct = async (productObj) => {
         throw new Error('Missing required properties in product object');
     }
 
-    // Skapa ett objekt som representerar det du ska skicka till API:et
-    // const dataToSend = {
-    //     Title: productObj.formData.title,
-    //     Description: productObj.formData.description,
-    //     Price: productObj.formData.price,
-    //     ImageUrl: productObj.formData.imagefile.name,
-    //     ImageFile: productObj.formData.imagefile,
-    //     SKU: productObj.sku
-    //     // Eventuellt andra egenskaper som du behöver skicka med
-    // };
-
-    // console.log(dataToSend)
-
     // Gör ett HTTP POST-anrop till din API med fetch
     const formData = new FormData();
     formData.append('Title', productObj.formData.title);
@@ -44,12 +31,15 @@ export const AddProduct = async (productObj) => {
     formData.append('Price', productObj.formData.price);
     formData.append('ImageUrl', productObj.formData.imagefile.name);
     formData.append('ImageFile', productObj.formData.imagefile);
-    formData.append('SKU', productObj.sku);
+    formData.append('SKU', productObj.formData.sku);
+
+    console.log(formData)
     
     await fetch('/api/Products/admin/add-product', {
         method: 'POST',
-        body: formData
+        body: formData,
     });
+    
     
 };
 

@@ -21,6 +21,6 @@ footer p{
     text-align: center;
     padding-bottom: 1%;
 }
-/* footer{
-    margin-top: 320px;
-} */
+footer{
+    position: relative;
+}

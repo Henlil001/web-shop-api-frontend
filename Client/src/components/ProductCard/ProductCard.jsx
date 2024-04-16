@@ -8,9 +8,9 @@ const ProductCard =({ProductInfo})=>{
     const{id} = useParams();
 
     return(<>
-        <div className='container'><Link to="" key={ProductInfo.id} href={`product/${ProductInfo.slug}`}>
+        <div className='container'><Link to="/product/:slug" key={ProductInfo.id} href={`product/${ProductInfo.slug}`}>
             <div>
-                <img src={ProductInfo.imgurl} alt={ProductInfo.title} />
+                <img src={"https://sthenlil001webshop.blob.core.windows.net/images/" + ProductInfo.imgurl} alt={ProductInfo.title} />
             </div>
             <div><p>{ProductInfo.title}</p><p className='floatR'>{ProductInfo.price}</p></div>
             </Link>

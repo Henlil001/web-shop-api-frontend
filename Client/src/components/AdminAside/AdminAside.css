@@ -12,16 +12,19 @@ aside ul {
 aside ul li  {
     
     padding-bottom: 10%;
+    font-weight: bold;
     font-size: x-large;
 }
 
-aside ul li NavLink {
+.navlink{
     text-decoration: none;
     color: black;
-    font-size: x-large;
-}
-aside ul li NavLink:hover {
-    font-weight: bold;
     
+    
+    
+}
+.navlink:hover {
+    
+    font-weight: bolder;
     
 }

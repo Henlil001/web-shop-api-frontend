@@ -10,7 +10,6 @@ const AdminAddProduct = () => {
     
     // Tillståndsvariabel för att hålla koll på om popupen ska visas eller inte
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [isPopupOpen2, setIsPopupOpen2] = useState(false);
 
     const title2 = useRef();
     const description2 = useRef();
@@ -57,16 +56,12 @@ const AdminAddProduct = () => {
             console.log(formData);
             await handelAddNewProductClick({ formData });
             console.log('Produkt tillagd');
-            setIsPopupOpen2(true);
+            navigate('/admin/products');
         } catch (error) {
             // Hantera fel om handelAddNewProductClick misslyckades
             console.error('Failed to add product:', error);
         }
     };
-    const handelPopupButtonClick =()=>{
-        setIsPopupOpen2(false);
-        navigate('/admin/products');
-    }
 
     return (
         <>
@@ -94,25 +89,16 @@ const AdminAddProduct = () => {
                     <label>Pris</label><br />
                     <input type="number" step=".01" ref={price2} onChange={() => setPrice1(price2.current.value)} />
                 </li>
-                
-                <button onClick={()=>handelClick()}>Lägg till</button>
+                <p><label>Tryck 2 gånger för att lägga till</label></p>
+                <button onClick={handelClick} >Lägg till</button>
             </ul>
 
-            {/* Popup-ruta /saknas input */}
+            {/* Popup-ruta */}
             {isPopupOpen && (
                 <div className="popup-container">
                     <div className="popup-content">
-                        <span className="close-btn" onClick={() => setIsPopupOpen(false)}>X</span>
-                        <h2>Fyll i alla fällt</h2>
-                    </div>
-                </div>
-            )}
-            {/* Popup-ruta / produkt tillagd */}
-            {isPopupOpen2 && (
-                <div className="popup-container">
-                    <div className="popup-content">
-                        <h2>Produkt tillagd</h2><br />
-                        <button className="close-btn2" onClick={() => handelPopupButtonClick()}>Tillbaka</button>
+                        <span className="close-btn" onClick={() => setIsPopupOpen(false)}>×</span>
+                        <h2>Fyll i alla fält</h2>
                     </div>
                 </div>
             )}

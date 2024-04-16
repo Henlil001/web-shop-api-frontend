@@ -22,6 +22,7 @@ function App() {
           <Routes>
           <Route exact path='/' element={<HomePage/>}/>
           <Route path="/search" element={<SearchResultPage/>}/>
+          <Route path="/product/:slug" element={<DetailView/>}/>
           <Route path="/admin/dashboard" element={<AdminPage><AdminDashboard/></AdminPage>}/>
           <Route path="/admin/products" element={<AdminPage><AdminProducts/></AdminPage>}/>
           <Route path="/admin/add-product" element={<AdminPage><AdminAddProduct/></AdminPage>}/>

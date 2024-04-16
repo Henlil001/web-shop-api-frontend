@@ -17,9 +17,10 @@ const AdminProducts =()=>{
                                                 </tr>)})
     return(<>
             <h3>Produkter</h3>
-            <button type="button" className="btn btn-light" onClick={()=>navigate("/admin/add-product")}>Ny produkt</button>
+            <button type="button" className="btn btn-light btn-outline-dark shadow" onClick={()=>navigate("/admin/add-product")}>Ny produkt</button>
             <table className="table">
             <thead>
+                
                 <tr>
                     <th scope="col">Produkt</th>
                     <th scope="col">SKU</th>
