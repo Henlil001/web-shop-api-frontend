@@ -42,7 +42,8 @@ namespace web_shop_api_frontend.Controllers
                 }
                 productsDTO.NumbersOfProducts = count;
 
-                _logger.LogInformation("Searhed product succssefully");
+                _logger.LogInformation("Searhed product successfully");
+                _logger.LogWarning("Searhed product successfully");
 
                 return Ok(productsDTO);
             }
@@ -77,7 +78,8 @@ namespace web_shop_api_frontend.Controllers
                 product.Slug = ReplaceSpacesWithUnderscores(product.Title);
                 _productsRepo.AddPicture(product.ImageFile);
                 _productsRepo.AddProduct(product);
-                _logger.LogInformation("Product added succssefully");
+                _logger.LogInformation("Product added successfully");
+                _logger.LogWarning("Product added successfully");
                 return Ok("New product added.");
             }
             catch (Exception ex)
@@ -95,7 +97,7 @@ namespace web_shop_api_frontend.Controllers
             {
                 productToUpdate.Slug = ReplaceSpacesWithUnderscores(productToUpdate.Title);
                 _productsRepo.UpdateProduct(productToUpdate);
-                _logger.LogInformation("Updated product succssefully");
+                _logger.LogInformation("Updated product successfully");
                 return Ok("product updated");
             }
             catch (Exception ex)
@@ -127,7 +129,8 @@ namespace web_shop_api_frontend.Controllers
 
                 if (check)
                 {
-                    _logger.LogInformation($"Product with id:{id}/ picture with url{product.ImageUrl} was deleted succssefully");
+                    _logger.LogInformation($"Product with id:{id}/ picture with url{product.ImageUrl} was deleted successfully");
+                    _logger.LogWarning("Product and image deleted successfully");
                     return Ok("Product deleted");
                 }
                 else return StatusCode(500, "Picture was not deleted");
