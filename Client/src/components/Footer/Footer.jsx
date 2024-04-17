@@ -21,6 +21,7 @@ const Footer =()=>{
                             <h6>Mina Sidor</h6>
                             <li><a href="">Mina Ordrar</a></li>
                             <li><a href="">Mitt Konto</a></li>
+                            <li><a href="/admin/products">Admin</a></li>
                         </ul>
                     
                     </div>
@@ -37,7 +38,6 @@ const Footer =()=>{
                     
                     </div>
                     <div className="col">
-                    
                     </div>
                 </div>
             </div>
