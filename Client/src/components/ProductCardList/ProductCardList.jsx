@@ -8,7 +8,7 @@ const ProductCardList =()=>{
 
     const {allProducts} = useContext(WebShopContext);
     const colum = allProducts.map(product =>{
-    return (<div key={product.id} className ="col" ><ProductCard key={product.id} ProductInfo ={product}/></div>);})
+    return (<div key={product.slug} className ="col" ><ProductCard key={product.slug} ProductInfo ={product}/></div>);})
 
     if (!allProducts){
         return(<div className="container text-center"><h3>No products</h3></div>)

@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 using web_shop_api_frontend.Models.DTO;
 using web_shop_api_frontend.Models.Entities;
 using web_shop_api_frontend.Repository.Interfaces;
@@ -24,6 +25,7 @@ namespace web_shop_api_frontend.Controllers
             return Ok(_productsRepo.GetAllProducts());
 
         }
+
         [Route("search={searchInput}")]
         [HttpGet]
         public IActionResult SearchProduct(string searchInput)
@@ -59,17 +61,16 @@ namespace web_shop_api_frontend.Controllers
             {
                 //Hämtar formData från bodyn
                 var formData = Request.Form;
-
+                var culture = CultureInfo.InvariantCulture; // Ange en specifik kultur, t.ex. InvariantCulture
                 // Skapa en ny instans av Products och fyll den med data från formData
                 var product = new Products
                 {
                     Title = formData["Title"],
                     Description = formData["Description"],
-                    Price = Convert.ToDecimal(formData["Price"]),
+                    Price = Convert.ToDecimal(formData["Price"], culture),
                     ImageUrl = formData["ImageUrl"], // Om du har en egenskap för bild-URL
                     ImageFile = formData.Files.GetFile("ImageFile"), // Hämta filen från formulärdatan
-                    SKU = formData["SKU"], // Om du har en egenskap för SKU
-                                           // Fortsätt fylla i övriga egenskaper enligt behov...
+                    SKU = formData["SKU"], 
                 };
                 
 
@@ -111,6 +112,7 @@ namespace web_shop_api_frontend.Controllers
         {
             try
             {
+                
                 var product = _productsRepo.GetProductById(id);
 
                 if (product is null)

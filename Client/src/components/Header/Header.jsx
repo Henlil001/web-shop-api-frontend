@@ -13,27 +13,27 @@ const Header =()=>{
 
     
     const handelChange = async()=>{
-        
+       
        await handelSearchedclick(searchVal.current.value);
     }
     
 
     return (<>
 
-            <nav className="navbar bg-body-secondary">
+        <nav className="navbar bg-body-secondary">
             <div className="container-fluid">
                 <ul>
-            <li><NavLink to="/">Hem</NavLink></li>
-            <li><a href="">Erbjudande</a></li>
-            <li><a href="">Kampanjer</a></li>
-            </ul>
-            <h2 onClick={()=>navigate("/")}>Freaky Fashion</h2>
+                    <li><NavLink to="/">Hem</NavLink></li>
+                    <li><a href="">Erbjudande</a></li>
+                    <li><a href="">Kampanjer</a></li>
+                </ul>
+                    <h2 onClick={()=>navigate("/")}>Freaky Fashion</h2>
                 <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Sök" aria-label="Search" ref={searchVal} onChange={handelChange}/>
-                <button className="btn btn-outline-primary custom-btn" type="submit"  onClick={()=>navigate("/search")}>Sök</button>
+                    <input className="form-control me-2" type="search" placeholder="Sök" aria-label="Search" ref={searchVal} onChange={handelChange}/>
+                    <button className="btn btn-outline-primary custom-btn" type="submit"  onClick={()=>navigate("/search")}>Sök</button>
                 </form>
             </div>
-            </nav>
+        </nav>
 
     </>)
 }

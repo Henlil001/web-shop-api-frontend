@@ -9,7 +9,7 @@ const searchResultPage =()=>{
     const {searchresult, searchInput} = useContext(WebShopContext);
     const result = searchresult && searchresult.products ? (
         searchresult.products.map(data => (
-           <div className ="col"><ProductCard key={data.id} ProductInfo={data}/></div>
+           <div className ="col" key={data.id}><ProductCard key={data.id} ProductInfo={data}/></div>
         ))
     ) : (
         <div>No search results</div>

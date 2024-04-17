@@ -1,4 +1,5 @@
-﻿using web_shop_api_frontend.Models.Entities;
+﻿using web_shop_api_frontend.Models.DTO;
+using web_shop_api_frontend.Models.Entities;
 
 namespace web_shop_api_frontend.Repository.Interfaces
 {
@@ -15,6 +16,6 @@ namespace web_shop_api_frontend.Repository.Interfaces
         List<Products> GetAllProducts();
         void AddPicture(IFormFile formFile);
         bool DeletePicture(string fileName);
-        Products GetProductById(int productId);
+        Products? GetProductById(int productId);
     }
 }

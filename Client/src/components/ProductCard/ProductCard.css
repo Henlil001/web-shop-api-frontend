@@ -1,15 +1,25 @@
-img{
-    height: auto;
-    width: auto;
+.imgK{
+    height: fit-content;
+    width: fit-content;
     }
     
     .floatR{
     float: right;
+    padding-right: 10%;
+    }
+    .floatL{
+        float: left;
+        padding-left: 10%; 
+        
+        
     }
     
-    .container{
-        height: 300px;
-        width: 150px;
+    .containers{
+        border: 1px solid black;
+        height: 100%;
+        width: 100%;
+        color: black;
+        margin-bottom: 20px;
     }
     
     

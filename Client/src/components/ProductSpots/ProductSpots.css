@@ -4,8 +4,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .container {
+  .containerse {
     position: relative;
     text-align: center;
     color: white;
+  
+    font-weight: bolder;
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
   }
+
+.marginBU{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.imgFit{
+  height: fit-content;
+  /* width: fit-content; */
+  
+}

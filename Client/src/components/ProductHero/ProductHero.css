@@ -1,5 +1,18 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dela upp i två kolumner med samma storlek */
-    gap: 10px; /* Mellanrum mellan rutorna */
+
+
+  .borderC{
+    border: 1px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
+
+  .fitcont{
+    height: fit-content;
+  width: fit-content;
+  }
+
+.h3Cen{
+    align-items: center;
+  }
+
+ 

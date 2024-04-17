@@ -28,7 +28,7 @@ export const AddProduct = async (productObj) => {
     const formData = new FormData();
     formData.append('Title', productObj.formData.title);
     formData.append('Description', productObj.formData.description);
-    formData.append('Price', productObj.formData.price);
+    formData.append('Price', parseFloat(productObj.formData.price).toFixed(2));
     formData.append('ImageUrl', productObj.formData.imagefile.name);
     formData.append('ImageFile', productObj.formData.imagefile);
     formData.append('SKU', productObj.formData.sku);

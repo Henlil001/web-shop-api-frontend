@@ -1,20 +1,24 @@
 import './ProductCard.css'
-import { Link, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 
 const ProductCard =({ProductInfo})=>{
 
-    const{id} = useParams();
+   
 
     return(<>
-        <div className='container'><Link to="/product/:slug" key={ProductInfo.id} href={`product/${ProductInfo.slug}`}>
-            <div>
-                <img src={"https://sthenlil001webshop.blob.core.windows.net/images/" + ProductInfo.imgurl} alt={ProductInfo.title} />
+        <Link to={`/product/${ProductInfo.slug}`} key={ProductInfo.id} href={`product/${ProductInfo.slug}`}>
+            <div className='containers'>
+                <div>
+                    <img className='imgK' src={"https://sthenlil001webshop.blob.core.windows.net/images/" + ProductInfo.imageUrl} alt={ProductInfo.imageUrl} />
+                </div>
+                <div>
+                    <p className='floatL'>{ProductInfo.title}</p>
+                    <p className='floatR'>{ProductInfo.price}</p>
+                </div>
             </div>
-            <div><p>{ProductInfo.title}</p><p className='floatR'>{ProductInfo.price}</p></div>
-            </Link>
-        </div>
+        </Link>
     </>)
 }
 

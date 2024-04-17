@@ -6,6 +6,7 @@ using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Microsoft.AspNetCore.Http;
 using static Dapper.SqlMapper;
+using web_shop_api_frontend.Models.DTO;
 
 namespace web_shop_api_frontend.Repository.Repos
 {
@@ -21,7 +22,6 @@ namespace web_shop_api_frontend.Repository.Repos
             using (IDbConnection db = _dbContext.GetConnection())
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@Id", product.Id);
                 parameters.Add("@Title", product.Title);
                 parameters.Add("@Description", product.Description);
                 parameters.Add("@Price", product.Price);
@@ -29,17 +29,17 @@ namespace web_shop_api_frontend.Repository.Repos
                 parameters.Add("@slug", product.Slug);
                 parameters.Add("@SKU", product.SKU);
 
-                db.Execute("AddProduct", commandType: CommandType.StoredProcedure);
+                db.Execute("AddProduct",parameters, commandType: CommandType.StoredProcedure);
             }
         }
-        public Products GetProductById(int productId)
+        public Products? GetProductById(int productId)
         {
             using (IDbConnection db = _dbContext.GetConnection())
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@Id", productId);
 
-               return db.QuerySingle("GetProductById", commandType: CommandType.StoredProcedure);
+                return db.QuerySingle<Products?>("GetProductById", parameters, commandType: CommandType.StoredProcedure);
             }
         }
         public bool DeletePicture(string fileName)
@@ -100,7 +100,7 @@ namespace web_shop_api_frontend.Repository.Repos
                 parameters.Add("@Id", productId);
 
 
-                db.Execute("DeleteProduct", commandType: CommandType.StoredProcedure);
+                db.Execute("DeleteProduct", parameters, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -136,7 +136,7 @@ namespace web_shop_api_frontend.Repository.Repos
                 parameters.Add("@slug", productToUpdate.Slug);
                 parameters.Add("@SKU", productToUpdate.SKU);
 
-                db.Execute("UpdateProduct", commandType: CommandType.StoredProcedure);
+                db.Execute("UpdateProduct", parameters, commandType: CommandType.StoredProcedure);
             }
         }
     }
