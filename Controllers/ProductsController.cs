@@ -44,6 +44,7 @@ namespace web_shop_api_frontend.Controllers
 
                 _logger.LogInformation("Searhed product successfully");
                 _logger.LogWarning("Searhed product successfully");
+                _logger.LogError("Searhed product successfully");
 
                 return Ok(productsDTO);
             }
